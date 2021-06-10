@@ -10,7 +10,7 @@ public class Main {
         computers[4] = new Computer("And some other");
 
         for (Computer someComputer : computers) {
-            System.out.println("Name: " + someComputer.name);
+            System.out.println("Name: " + someComputer.getName());
         }
 
     }
