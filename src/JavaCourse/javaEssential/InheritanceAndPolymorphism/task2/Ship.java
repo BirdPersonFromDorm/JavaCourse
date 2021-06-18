@@ -4,15 +4,11 @@ public class Ship extends Vehicle {
     protected int passengers;
     protected int port;
 
-    Ship(double coordinateX, double coordinateY,
-         double coordinateZ, double cost,
-         int speed, int yearOfRelease) {
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-        this.coordinateZ = coordinateZ;
-        this.speed = speed;
-        this.cost = cost;
-        this.yearOfRelease = yearOfRelease;
+
+
+    Ship(double coordinateX, double coordinateY, double coordinateZ, double cost, int speed, int yearOfRelease) {
+        super(coordinateX, coordinateY, coordinateZ, cost, speed, yearOfRelease);
+
         this.passengers = 30;
         this.port = 93;
     }

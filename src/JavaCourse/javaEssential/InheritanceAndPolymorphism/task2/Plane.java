@@ -7,12 +7,7 @@ public class Plane extends Vehicle {
     Plane(double coordinateX, double coordinateY,
           double coordinateZ, double cost,
           int speed, int yearOfRelease) {
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-        this.coordinateZ = coordinateZ;
-        this.speed = speed;
-        this.cost = cost;
-        this.yearOfRelease = yearOfRelease;
+        super(coordinateX,coordinateY, coordinateZ, cost, speed, yearOfRelease);
         this.passengers = 50;
         this.height = 1500;
     }

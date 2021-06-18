@@ -6,12 +6,7 @@ public class Car extends Vehicle {
     Car(double coordinateX, double coordinateY,
         double coordinateZ, double cost,
         int speed, int yearOfRelease) {
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-        this.coordinateZ = coordinateZ;
-        this.speed = speed;
-        this.cost = cost;
-        this.yearOfRelease = yearOfRelease;
+        super(coordinateX, coordinateY, coordinateZ, cost, speed, yearOfRelease);
     }
 
     @Override

@@ -10,5 +10,15 @@ public class Vehicle {
     protected int yearOfRelease;
 
 
+    public Vehicle(double coordinateX, double coordinateY, double coordinateZ, double cost, int speed, int yearOfRelease) {
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+        this.coordinateZ = coordinateZ;
+        this.cost = cost;
+        this.speed = speed;
+        this.yearOfRelease = yearOfRelease;
+    }
+
+
 }
 
