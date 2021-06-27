@@ -1,10 +1,9 @@
 package JavaCourse.javaEssential.Lists.task1_2;
 
-import JavaCourse.javaEssential.Lists.task3.Main;
 
 import java.util.ArrayList;
 
-public class Zoo extends Main {
+public class Zoo {
     public static void main(String[] args) {
         ArrayList<String> someAnimalList = new ArrayList<>();
 
