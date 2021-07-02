@@ -15,6 +15,6 @@ public enum Animals {
 
     @Override
     public String toString() {
-        return name() + " " + " Age = " + age;
+        return name() + ":" + " Age = " + age;
     }
 }
