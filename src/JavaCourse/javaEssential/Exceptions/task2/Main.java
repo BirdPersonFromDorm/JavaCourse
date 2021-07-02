@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException, Exception{
         ArrayList<Price> someShop = new ArrayList<Price>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -46,18 +46,12 @@ public class Main {
             System.out.println(shop.getShop());
         }
         String shopInformation = br.readLine();
-        for (int i = 0; i < someShop.size(); i++) {
-            try {
-                if (someShop.get(i).getShop().equals(shopInformation)) {
-                    System.out.println("Product of " + shopInformation + ": ");
-                    System.out.println(someShop.get(i).getProductName());
-                }
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
+        for (Price price : someShop) {
+            if (price.getShop().equals(shopInformation)) {
+                System.out.println("Product of " + shopInformation + ": ");
+                System.out.println(price.getProductName());
+            }else
+                throw new Exception();
         }
-
-
     }
 }
