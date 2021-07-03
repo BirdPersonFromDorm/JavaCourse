@@ -14,15 +14,22 @@ public class Main {
         someList.add(4);
         someList.add(5);
         someList.add(6);
+
+
+
         //ДОбавляем по индексу число
-        someList.add(1,100);
+        someList.add(3,11);
         //Удаляем по индексу число
         someList.remove(1);
+
+        System.out.println(someList);
+
         System.out.println(someList.size());
         System.out.println(someList.get(5));
         //Проверяем имееться ли данное число в листе
         System.out.println(someList.contains(105));
         someList.clear();
+
 
     }
 }

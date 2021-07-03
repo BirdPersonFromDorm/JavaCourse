@@ -8,11 +8,10 @@ public class MyArrayList {
 
     public void add(int element) {
         if (size == array.length) {
-            int[] newArray = new int[size * 2];
+            int[] newArray = new int[(size * 3)/2];
 
-            for (int i = 0; i < size; i++) {
-                newArray[i] = array[i];
-            }
+            System.arraycopy(array, 0, newArray,0, size);
+
             array = newArray;
         }
 
@@ -21,29 +20,29 @@ public class MyArrayList {
     }
 
     public void add(int index, int element) {
-        System.arraycopy(array, index, array,index + 1, size - index );
+        if (size == array.length) {
+            int[] newArray = new int[(size * 3)/2];
+
+            System.arraycopy(array, 0, newArray, 0, size);
+
+            array = newArray;
+        }
+        System.arraycopy(array, index, array, index + 1, size - index);
         for (int i = 0; i < size; i++) {
-            if (i == index &&  i < array.length) {
+            if (i == index && i < size()) {
                 array[i] = element;
             }
-        }
 
+        }
     }
 
     public void remove(int index) {
-
-        for (int i = 0; i < size; i++) {
-            if (i >= index && i < array.length) {
-                array[i] = array[i + 1];
-            }
-        }
-        size--;
+        System.arraycopy(array, index + 1, array, index, size);
+        size --;
     }
 
     public void clear() {
-        for (int i = 0; i < size; i++) {
-            array[i] = 0;
-        }
+        array = new int[3];
         size = 0;
     }
 
