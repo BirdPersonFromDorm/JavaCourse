@@ -1,6 +1,7 @@
 package JavaCourse.javaProfessional.CollectionPart1.adittionalTask;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +12,18 @@ public class Main {
         ArrayList<String> sameList = new ArrayList<>();
         String isEnd = "end";
 
+        while(true){
             try{
-                while (!(br.readLine().equals(isEnd))) {
-                    sameList.add(br.readLine());
+                String enter = br.readLine();
+                if (enter.equalsIgnoreCase("End")){
+                    break;
                 }
+                sameList.add(enter);
             }
             catch (Exception e){
                 e.printStackTrace();
             }
+        }
 
         System.out.println(sameList);
             
