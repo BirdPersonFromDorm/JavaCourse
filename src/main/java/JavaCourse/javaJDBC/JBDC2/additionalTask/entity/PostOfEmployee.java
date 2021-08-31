@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PostOfEmployee {
 
+    private long PostOfEmployeeID;
     private double salary;
     private String post;
 

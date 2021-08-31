@@ -20,7 +20,7 @@ public class Main {
         List<PostOfEmployee> byPost = postOfEmployeeDAO.getAllWherePostIs("Менеджер");
 
         for (PostOfEmployee getAll:byPost ) {
-            System.out.println(byPost);
+            System.out.println(getAll);
         }
 
     }

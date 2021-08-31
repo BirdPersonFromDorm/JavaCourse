@@ -168,6 +168,7 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
                 String postOfTable = rs.getString(2);
                 double salary = rs.getDouble(3);
                 PostOfEmployee postOfEmployee = new PostOfEmployee();
+                postOfEmployee.setPostOfEmployeeID(postOfEmployeeID);
                 postOfEmployee.setPost(postOfTable);
                 postOfEmployee.setSalary(salary);
                 allPostOfEmployee.add(postOfEmployee);
