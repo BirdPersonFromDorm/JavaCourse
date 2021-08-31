@@ -14,9 +14,9 @@ public class Main {
 
 //        PostOfEmployee postOfEmployee = new PostOfEmployee(1000.0,"Менеджер");
 //        postOfEmployeeDAO.add(postOfEmployee);
-        //System.out.println(postOfEmployeeDAO.getById(2));
-        //postOfEmployeeDAO.updatePrice("Something", 500);
-        //postOfEmployeeDAO.remove("Something");
+//        System.out.println(postOfEmployeeDAO.getById(2));
+//        postOfEmployeeDAO.updatePrice("Something", 500);
+//        postOfEmployeeDAO.remove("Something");
         List<PostOfEmployee> byPost = postOfEmployeeDAO.getAllWherePostIs("Менеджер");
 
         for (PostOfEmployee getAll:byPost ) {

@@ -8,7 +8,6 @@ import java.sql.*;
 
 public class PostOfEmployeeDAO implements IPostOfEmployee{
 
-
     @Override
     public void add(PostOfEmployee postOfEmployee) {
         Connection connection = null;
@@ -17,11 +16,8 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
 
         try{
             preparedStatement = connection.prepareStatement("INSERT INTO postofemployee(post, salary) VALUES (?, ?)");
-
             preparedStatement.setString(1, postOfEmployee.getPost());
             preparedStatement.setDouble(2, postOfEmployee.getSalary());
-
-
             preparedStatement.execute();
         }
         catch (SQLException e) {
@@ -29,7 +25,6 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
         }
         finally {
             if (connection != null && preparedStatement != null) {
-
                 try {
                     connection.close();
                     preparedStatement.close();
@@ -38,24 +33,20 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
                 }
             }
         }
-
     }
 
     @Override
     public PostOfEmployee getById(int id) {
         Connection connection = null;
         connection = getConnection();
-
         PreparedStatement preparedStatement = null;
 
         try {
             preparedStatement = connection.prepareStatement("SELECT post, salary FROM postofemployee " +
                     "WHERE PostOfEmployeeID = ? ");
-
             preparedStatement.setInt(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
-
             rs.next();
             String post = rs.getString(1);
             double salary = rs.getDouble(2);
@@ -65,12 +56,10 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
 
             return postOfEmployee;
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             if (connection != null && preparedStatement != null) {
-
                 try {
                     connection.close();
                     preparedStatement.close();
@@ -79,33 +68,27 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
                 }
             }
         }
-
         return null;
     }
-
 
     @Override
     public void updatePrice(String post, double salary) {
         Connection connection;
         connection = getConnection();
-
         PreparedStatement preparedStatement = null;
 
         try {
             preparedStatement = connection.prepareStatement("UPDATE postofemployee SET post = ? WHERE salary = ?");
-
             preparedStatement.setString(1, post);
             preparedStatement.setDouble(2, salary);
 
             int updatedValues = preparedStatement.executeUpdate();
-
             System.out.println("Values updated: " + updatedValues);
 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             if (connection != null && preparedStatement != null) {
-
                 try {
                     connection.close();
                     preparedStatement.close();
@@ -120,24 +103,19 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
     public void remove(String post) {
         Connection connection = null;
         connection = getConnection();
-
         PreparedStatement preparedStatement = null;
 
         try {
-
             preparedStatement = connection.prepareStatement("DELETE FROM postofemployee WHERE post = ? ");
-
             preparedStatement.setString(1, post);
 
             int deletedValues = preparedStatement.executeUpdate();
-
             System.out.println("Values deleted: " + deletedValues);
 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             if (connection != null && preparedStatement != null) {
-
                 try {
                     connection.close();
                     preparedStatement.close();
@@ -158,11 +136,9 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
         try {
             preparedStatement = connection.prepareStatement("SELECT postofemployeeid,post,salary FROM postofemployee" +
                         " WHERE post = ?");
-
             preparedStatement.setString(1, post);
 
             ResultSet rs = preparedStatement.executeQuery();
-
             while (rs.next()) {
                 long postOfEmployeeID = rs.getLong(1);
                 String postOfTable = rs.getString(2);
@@ -173,14 +149,11 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
                 postOfEmployee.setSalary(salary);
                 allPostOfEmployee.add(postOfEmployee);
             }
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         finally {
             if (connection != null && preparedStatement != null) {
-
                 try {
                     connection.close();
                     preparedStatement.close();
@@ -192,7 +165,6 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
         return allPostOfEmployee;
     }
 
-
     private Connection getConnection() {
         Connection connection = null;
 
@@ -202,7 +174,6 @@ public class PostOfEmployeeDAO implements IPostOfEmployee{
         } catch(SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }
