@@ -1,4 +1,4 @@
-package JavaCourse.javaJDBC.JDBC.aditionalTask;
+package JavaCourse.javaJDBC.JBDC.aditionalTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;

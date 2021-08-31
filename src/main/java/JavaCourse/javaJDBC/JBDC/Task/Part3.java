@@ -1,4 +1,4 @@
-package JavaCourse.javaJDBC.JDBC.Task;
+package JavaCourse.javaJDBC.JBDC.Task;
 
 import java.sql.*;
 
@@ -6,7 +6,7 @@ public class Part3 {
 
     private static String URL = "jdbc:mysql://localhost:3306/myjoinsdb?serverTimezone=UTC";
     private static String LOGIN = "root";
-    private static String PASSWORD = "12345";
+    private static String PASSWORD = "admin";
 
     public static void main(String[] args) {
 
@@ -29,9 +29,9 @@ public class Part3 {
             ResultSet resultSet = statement.executeQuery(sql);
 
             while(resultSet.next()){
-                String Name = resultSet.getString("Name");
-                String DateOfBirt = resultSet.getString("DateOfBirt");
-                String TelefonNumber = resultSet.getString("TelefonNumber");
+                String Name = resultSet.getString(1);
+                String DateOfBirt = resultSet.getString(2);
+                String TelefonNumber = resultSet.getString(3);
 
                 System.out.println(Name + " " + DateOfBirt + " " + TelefonNumber);
             }

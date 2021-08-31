@@ -1,4 +1,4 @@
-package JavaCourse.javaJDBC.JDBC.Task;
+package JavaCourse.javaJDBC.JBDC.Task;
 
 import java.sql.*;
 
@@ -6,7 +6,7 @@ public class Part2 {
 
     private static final String URL = "jdbc:mysql://localhost:3306/myjoinsdb?serverTimezone=UTC";
     private static final String LOGIN = "root";
-    private static final String PASSWORD = "12345";
+    private static final String PASSWORD = "admin";
 
     public static void main(String[] args) {
         Connection connection = null;

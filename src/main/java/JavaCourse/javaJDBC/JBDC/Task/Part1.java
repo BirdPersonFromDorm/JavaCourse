@@ -1,14 +1,15 @@
-package JavaCourse.javaJDBC.JDBC.Task;
+package JavaCourse.javaJDBC.JBDC.Task;
 
 import java.sql.*;
 
 public class Part1 {
     private static final String URL = "jdbc:mysql://localhost:3306/myjoinsdb?serverTimezone=UTC";
     private static final String LOGIN = "root";
-    private static final String PASSWORD = "12345";
+    private static final String PASSWORD = "admin";
 
 
     public static void main(String[] args) {
+        //registerDriver();
 
         Connection connection = null;
         Statement statement = null;
@@ -43,5 +44,13 @@ public class Part1 {
             }
         }
 
+    }
+    private static void registerDriver() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Driver loading success!");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
