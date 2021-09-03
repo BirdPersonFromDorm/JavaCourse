@@ -5,7 +5,8 @@ import JavaCourse.javaJDBC.HibernatePart1.com.entity.NewPersonalInformation;
 public interface NewIPersonalInformation {
     NewPersonalInformation save(NewPersonalInformation personalInformation);
     NewPersonalInformation getById(int id);
-    NewPersonalInformation update(NewPersonalInformation personalInformation);
-    NewPersonalInformation delete(NewPersonalInformation personalInformation);
+    void update(NewPersonalInformation personalInformation);
+    void delete(NewPersonalInformation personalInformation);
+    public NewPersonalInformation getNewPersonalInformationByCity(String city);
 
 }

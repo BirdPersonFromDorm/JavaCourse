@@ -44,6 +44,10 @@ public class NewPersonalInformation {
         return City;
     }
 
+    public void setCity(String city) {
+        City = city;
+    }
+
     @Override
     public String toString() {
         return "NewPersonalInformation{" +
@@ -54,7 +58,4 @@ public class NewPersonalInformation {
                 '}';
     }
 
-    public void setCity(String city) {
-        City = city;
-    }
 }
