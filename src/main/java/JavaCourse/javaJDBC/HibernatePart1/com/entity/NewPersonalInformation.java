@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 public class NewPersonalInformation {
@@ -13,7 +14,7 @@ public class NewPersonalInformation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int PersonalInformationID;
     private String MaritalStatus;
-    private Date DateOfBirt;
+    private LocalDate DateOfBirt;
     private String City;
 
     public int getPersonalInformationID() {
@@ -32,11 +33,11 @@ public class NewPersonalInformation {
         MaritalStatus = maritalStatus;
     }
 
-    public Date getDateOfBirt() {
+    public LocalDate getDateOfBirt() {
         return DateOfBirt;
     }
 
-    public void setDateOfBirt(Date dateOfBirt) {
+    public void setDateOfBirt(LocalDate dateOfBirt) {
         DateOfBirt = dateOfBirt;
     }
 
@@ -57,5 +58,4 @@ public class NewPersonalInformation {
                 ", City='" + City + '\'' +
                 '}';
     }
-
 }
