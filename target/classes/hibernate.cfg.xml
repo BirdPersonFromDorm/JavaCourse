@@ -19,6 +19,7 @@
 
 
         <mapping class="JavaCourse.javaJDBC.HibernatePart1.com.entity.NewPersonalInformation"/>
+        <mapping class="JavaCourse.javaJDBC.HibernatePart1.com.entity.NewEmployeer"/>
 
 
     </session-factory>

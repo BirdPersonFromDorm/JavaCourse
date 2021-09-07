@@ -1,11 +1,9 @@
 package JavaCourse.javaJDBC.HibernatePart1.com.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class NewPersonalInformation {
@@ -16,6 +14,16 @@ public class NewPersonalInformation {
     private String MaritalStatus;
     private LocalDate DateOfBirt;
     private String City;
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<NewEmployeer> newEmployeer;
+
+    public List<NewEmployeer> getNewEmployeer() {
+        return newEmployeer;
+    }
+
+    public void setNewEmployeer(List<NewEmployeer> newEmployeer) {
+        this.newEmployeer = newEmployeer;
+    }
 
     public int getPersonalInformationID() {
         return PersonalInformationID;
