@@ -1,27 +1,50 @@
 package JavaCourse.javaJDBC.HibernatePart1.com;
 
+import JavaCourse.javaJDBC.HibernatePart1.com.DAO.NewEmployeerDAO;
+import JavaCourse.javaJDBC.HibernatePart1.com.DAO.NewIEmployeer;
 import JavaCourse.javaJDBC.HibernatePart1.com.DAO.NewPersonalInformationDAO;
+import JavaCourse.javaJDBC.HibernatePart1.com.entity.NewEmployeer;
 import JavaCourse.javaJDBC.HibernatePart1.com.entity.NewPersonalInformation;
 import JavaCourse.javaJDBC.HibernatePart1.com.init.Init; 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static NewPersonalInformationDAO personalInformationDAO = new NewPersonalInformationDAO();
+    public static NewEmployeerDAO newEmployeerDAO = new NewEmployeerDAO();
     public static final Init initDB = new Init();
 
     public static void main(String[] args) {
 
+        NewPersonalInformation result = personalInformationDAO.getById(8);
+        System.out.println(result);
+
+
+        List<NewEmployeer> sameListsameList = new ArrayList<>();
+
+
+        NewEmployeer newEmployeer = new NewEmployeer();
+        newEmployeer.setTelefonNumber("5555445");
+        newEmployeer.setNewPersonalInformation(result);
+
+        sameListsameList.add(newEmployeer);
+
+        result.setNewEmployeer(sameListsameList);
+
+        personalInformationDAO.update(result);
+
+
 //        NewPersonalInformation newpersonalInformation = new NewPersonalInformation();
-//        newpersonalInformation.setCity("new");
-//        newpersonalInformation.setDateOfBirt(LocalDate.of(2018,3,30));
+//        newpersonalInformation.setCity("Gorlovka");
+//        newpersonalInformation.setDateOfBirt(LocalDate.of(2015,3,15));
 //        newpersonalInformation.setMaritalStatus("Женат");
 //
 //        personalInformationDAO.save(newpersonalInformation);
 //
-//        NewPersonalInformation result = personalInformationDAO.getById(5);
-//        System.out.println(result);
+//        personalInformationDAO.save(newpersonalInformation);
+
 
 //        result.setCity("NewCity");
 //        personalInformationDAO.update(result);
